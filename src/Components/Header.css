@@ -1,0 +1,49 @@
+.hero-section {
+  background: url("../Assets/header-img.webp");
+  background-size: cover;
+  background-position: 30% 70%;
+  background-repeat: no-repeat;
+  min-height: 75vh;
+  min-width: 100vw;
+}
+
+header {
+  background-color: rgba(0, 128, 128, 0.85);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-txt {
+  margin-left: 16px;
+}
+
+.img-logo {
+  width: 60px;
+  height: 60px;
+  filter: invert(1);
+}
+
+.logo-txt a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  margin: 32px;
+  text-transform: capitalize;
+}
