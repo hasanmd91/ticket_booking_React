@@ -1,0 +1,43 @@
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: teal;
+  width: 100%;
+  padding: 16px;
+}
+
+select,
+.booking-date,
+button {
+  height: 35px;
+  width: 175px;
+  margin: 10px;
+  border-radius: 3px;
+  border: none;
+  padding: 0 16px;
+}
+
+select {
+  border: none;
+  font-family: inherit;
+}
+
+.booking-date {
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.primary-btn {
+  background-color: teal;
+  color: #fff;
+  text-transform: uppercase;
+  height: 35px;
+  width: 150px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-family: inherit;
+  cursor: pointer;
+}
