@@ -1,3 +1,7 @@
+```
+This is a Team Project for  Fullstack Web Developer Program in Business College Helsinki.
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
