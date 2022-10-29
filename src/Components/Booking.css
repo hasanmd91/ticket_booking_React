@@ -25,6 +25,27 @@ select {
   font-family: inherit;
 }
 
+.input-people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.input-people button {
+  width: 35px;
+  font-size: 16px;
+  border: 3px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+}
+
+.no-of-people {
+  color: #fff;
+}
+
 .booking-date {
   font-family: inherit;
   text-transform: uppercase;
