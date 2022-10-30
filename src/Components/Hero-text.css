@@ -28,6 +28,7 @@ h2 {
   color: #fff;
   padding: 16px;
   margin: 0 5px;
-  width: 150px;
+  width: 120px;
   background-color: #333;
+  clip-path: polygon(85% 0%, 100% 50%, 100% 100%, 0 100%, 0 0);
 }

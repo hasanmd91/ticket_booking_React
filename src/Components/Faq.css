@@ -1,0 +1,26 @@
+.faq-wrapper {
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+}
+
+.qsn-ans {
+  padding: 1rem;
+}
+
+.qsn {
+  background-color: teal;
+  padding: 1rem;
+  color: #fff;
+}
+
+.ans {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+
+.qsn:active + .ans {
+  height: auto;
+  overflow: visible;
+}
