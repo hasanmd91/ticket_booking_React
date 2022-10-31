@@ -20,7 +20,7 @@
   overflow: hidden;
 }
 
-.qsn:active + .ans {
+.qsn.active {
   height: auto;
   overflow: visible;
 }

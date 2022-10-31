@@ -13,7 +13,9 @@ class Booking extends Component {
 
   removeOneHandler = (e) => {
     e.preventDefault();
-    this.setState({ counter: this.state.counter - 1 });
+    if (this.state.counter > 1) {
+      this.setState({ counter: this.state.counter - 1 });
+    }
   };
   render() {
     return (
