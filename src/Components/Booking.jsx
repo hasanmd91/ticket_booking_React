@@ -20,7 +20,7 @@ class Booking extends Component {
   };
 
   citiesList = Cities.map((city) => {
-    return <option value={city.value}>{city.name}</option>;
+    return <option value={city}>{city}</option>;
   });
   render() {
     return (
