@@ -9,12 +9,7 @@ class Booking extends Component {
     departure: "",
     destination: "",
     date: "",
-    // new Date.getDate() +
-    // "." +
-    // new Date.getMonth() +
-    // 1 +
-    // "." +
-    // new Date.getFullYear(),
+    ticketNumber: "",
   };
 
   addOneHandler = (e) => {
@@ -40,6 +35,22 @@ class Booking extends Component {
   dateHandler = (e) => {
     this.setState({ date: e.target.value });
     console.log(e.target.value);
+  };
+
+  ticketNumberMaker = () => {
+    let code = "";
+    let chars = "0123456789";
+    for (let i = 0; i < 15; i++) {
+      code += chars.charAt(Math.random() * chars.length);
+    }
+    return code;
+  };
+
+  ticketNumberHandler = (e) => {
+    e.preventDefault();
+    this.setState({
+      ticketNumber: this.ticketNumberMaker(),
+    });
   };
 
   citiesList = Cities.map((city) => {
@@ -85,7 +96,12 @@ class Booking extends Component {
               onChange={this.dateHandler}
             ></input>
           </div>
-          <button type="submit" className="primary-btn" id="btn-ticket">
+          <button
+            type="submit"
+            className="primary-btn"
+            id="btn-ticket"
+            onClick={this.ticketNumberHandler}
+          >
             Order a Ticket
           </button>
         </form>
@@ -95,6 +111,7 @@ class Booking extends Component {
             destinationCity={this.state.destination}
             date={this.state.date}
             people={this.state.counter}
+            ticketNumber={this.state.ticketNumber}
           />
         </div>
       </section>

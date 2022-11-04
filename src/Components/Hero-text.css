@@ -5,7 +5,6 @@
   padding: 16px;
   transform: translate(-50%, -35%);
   background-color: #fff;
-  box-shadow: 0 0 0 5px teal;
   color: #fff;
   text-align: center;
   min-width: auto;
@@ -29,6 +28,6 @@ h2 {
   padding: 16px;
   margin: 0 5px;
   width: 120px;
-  background-color: #333;
-  clip-path: polygon(85% 0%, 100% 50%, 100% 100%, 0 100%, 0 0);
+  background-color: rgb(255, 106, 0);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }

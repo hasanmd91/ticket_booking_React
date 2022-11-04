@@ -15,9 +15,10 @@ button {
   height: 35px;
   width: 175px;
   margin: 10px;
-  border-radius: 3px;
   border: none;
   padding: 0 16px;
+  background-color: rgb(159, 233, 233);
+  color: #333;
 }
 
 select {
@@ -36,7 +37,6 @@ select {
 .input-people button {
   width: 35px;
   font-size: 16px;
-  border: 3px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;

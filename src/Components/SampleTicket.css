@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap");
+
+.ticket-wrapper {
+  margin: 50px auto;
+  width: 500px;
+  border: 1px solid #333;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ticket-barcode {
+  font-family: "Libre Barcode 39", cursive;
+  font-size: 30px;
+}
