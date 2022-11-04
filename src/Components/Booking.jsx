@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import { Cities } from "./Cities";
+import SampleTicket from "./SampleTicket";
 import "./Booking.css";
 
 class Booking extends Component {
   state = {
     counter: 1,
-    cityname: "",
+    departure: "",
+    destination: "",
     date: "",
+    // new Date.getDate() +
+    // "." +
+    // new Date.getMonth() +
+    // 1 +
+    // "." +
+    // new Date.getFullYear(),
   };
 
   addOneHandler = (e) => {
@@ -21,8 +29,12 @@ class Booking extends Component {
     }
   };
 
-  selectCityHandler = (e) => {
-    this.setState({ cityname: e.target.value });
+  departureCityHandler = (e) => {
+    this.setState({ departure: e.target.value });
+  };
+
+  destinationCityHandler = (e) => {
+    this.setState({ destination: e.target.value });
   };
 
   dateHandler = (e) => {
@@ -40,8 +52,8 @@ class Booking extends Component {
           <div>
             <select
               className="departure-city"
-              value={this.state.city}
-              onChange={this.selectCityHandler}
+              value={this.state.departure}
+              onChange={this.departureCityHandler}
             >
               {this.citiesList}
             </select>
@@ -49,8 +61,8 @@ class Booking extends Component {
           <div>
             <select
               className="destination-city"
-              value={this.state.city}
-              onChange={this.selectCityHandler}
+              value={this.state.destination}
+              onChange={this.destinationCityHandler}
             >
               {this.citiesList}
             </select>
@@ -77,6 +89,14 @@ class Booking extends Component {
             Order a Ticket
           </button>
         </form>
+        <div className="ticket">
+          <SampleTicket
+            departureCity={this.state.departure}
+            destinationCity={this.state.destination}
+            date={this.state.date}
+            people={this.state.counter}
+          />
+        </div>
       </section>
     );
   }
