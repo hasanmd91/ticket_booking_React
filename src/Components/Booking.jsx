@@ -5,6 +5,8 @@ import "./Booking.css";
 class Booking extends Component {
   state = {
     counter: 1,
+    cityname: "",
+    date: "",
   };
 
   addOneHandler = (e) => {
@@ -19,6 +21,15 @@ class Booking extends Component {
     }
   };
 
+  selectCityHandler = (e) => {
+    this.setState({ cityname: e.target.value });
+  };
+
+  dateHandler = (e) => {
+    this.setState({ date: e.target.value });
+    console.log(e.target.value);
+  };
+
   citiesList = Cities.map((city) => {
     return <option value={city}>{city}</option>;
   });
@@ -27,10 +38,22 @@ class Booking extends Component {
       <section className="section-booking">
         <form>
           <div>
-            <select className="departure-city">{this.citiesList}</select>
+            <select
+              className="departure-city"
+              value={this.state.city}
+              onChange={this.selectCityHandler}
+            >
+              {this.citiesList}
+            </select>
           </div>
           <div>
-            <select className="destination-city">{this.citiesList}</select>
+            <select
+              className="destination-city"
+              value={this.state.city}
+              onChange={this.selectCityHandler}
+            >
+              {this.citiesList}
+            </select>
           </div>
 
           <div className="input-people">
@@ -43,7 +66,12 @@ class Booking extends Component {
             </button>
           </div>
           <div>
-            <input className="booking-date" type="date"></input>
+            <input
+              className="booking-date"
+              type="date"
+              value={this.state.date}
+              onChange={this.dateHandler}
+            ></input>
           </div>
           <button type="submit" className="primary-btn" id="btn-ticket">
             Order a Ticket
