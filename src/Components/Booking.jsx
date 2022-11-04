@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Cities } from "./Cities";
-import SampleTicket from "./SampleTicket";
+import InfoDetail from "./InfoDetail";
 import "./Booking.css";
 
 class Booking extends Component {
   state = {
     counter: 1,
-    departure: "",
+    departure: "helsinki",
     destination: "",
     date: "",
     ticketNumber: "",
@@ -40,7 +40,7 @@ class Booking extends Component {
   ticketNumberMaker = () => {
     let code = "";
     let chars = "0123456789";
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 10; i++) {
       code += chars.charAt(Math.random() * chars.length);
     }
     return code;
@@ -65,6 +65,7 @@ class Booking extends Component {
               className="departure-city"
               value={this.state.departure}
               onChange={this.departureCityHandler}
+              required
             >
               {this.citiesList}
             </select>
@@ -74,6 +75,7 @@ class Booking extends Component {
               className="destination-city"
               value={this.state.destination}
               onChange={this.destinationCityHandler}
+              required
             >
               {this.citiesList}
             </select>
@@ -94,18 +96,21 @@ class Booking extends Component {
               type="date"
               value={this.state.date}
               onChange={this.dateHandler}
+              required
             ></input>
           </div>
+
           <button
             type="submit"
             className="primary-btn"
             id="btn-ticket"
             onClick={this.ticketNumberHandler}
           >
-            Order a Ticket
+            Order Ticket
           </button>
+          <button className="primary-btn">Proceed to Order</button>
         </form>
-        <div className="ticket">
+        {/* <div className="ticket">
           <SampleTicket
             departureCity={this.state.departure}
             destinationCity={this.state.destination}
@@ -113,7 +118,8 @@ class Booking extends Component {
             people={this.state.counter}
             ticketNumber={this.state.ticketNumber}
           />
-        </div>
+        </div> */}
+        <InfoDetail />
       </section>
     );
   }
