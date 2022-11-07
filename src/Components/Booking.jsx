@@ -9,6 +9,7 @@ class Booking extends Component {
     departure: "helsinki",
     destination: "",
     date: "",
+    today: "",
     ticketNumber: "",
   };
 
@@ -38,10 +39,28 @@ class Booking extends Component {
   };
 
   //Getting today's date.
-  current = new Date();
-  todayDate = `${this.current.getFullYear()}-${
-    this.current.getMonth() + 1
-  }-0${this.current.getDate()}`;
+  // gettingToday = () => {
+  //   let current = new Date();
+  //   let day = current.getDate();
+  //   let month = current.getMonth() + 1;
+  //   let year = current.getFullYear();
+  //   // return `${year}-${month < 10?`0${month}`:`${month}`-${
+  //   //   date<10?`0${date}` : `${date}`
+  //   // }`;
+
+  //   return `${year}-${month}-${day}`;
+  // };
+
+  gettingToday = () => {
+    let newDate = new Date();
+    let date = newDate.getDate();
+    let month = newDate.getMonth() + 1;
+    let year = newDate.getFullYear();
+
+    return this.setState({
+      today: `${year}-${month < 10 ? `0${month}` : `${month}`}-${date}`,
+    });
+  };
 
   ticketNumberMaker = () => {
     let code = "";
@@ -100,7 +119,7 @@ class Booking extends Component {
             <input
               className="booking-date"
               type="date"
-              min={this.todayDate}
+              min={this.state.today}
               value={this.state.date}
               onChange={this.dateHandler}
               required
