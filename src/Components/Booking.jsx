@@ -37,6 +37,12 @@ class Booking extends Component {
     console.log(e.target.value);
   };
 
+  //Getting today's date.
+  current = new Date();
+  todayDate = `${this.current.getFullYear()}-${
+    this.current.getMonth() + 1
+  }-0${this.current.getDate()}`;
+
   ticketNumberMaker = () => {
     let code = "";
     let chars = "0123456789";
@@ -94,21 +100,24 @@ class Booking extends Component {
             <input
               className="booking-date"
               type="date"
+              min={this.todayDate}
               value={this.state.date}
               onChange={this.dateHandler}
               required
             ></input>
           </div>
 
-          <button
+          {/* <button
             type="submit"
             className="primary-btn"
             id="btn-ticket"
             onClick={this.ticketNumberHandler}
           >
             Order Ticket
+          </button> */}
+          <button className="primary-btn" id="btn-proceed">
+            Proceed to Order
           </button>
-          <button className="primary-btn">Proceed to Order</button>
         </form>
         {/* <div className="ticket">
           <SampleTicket
