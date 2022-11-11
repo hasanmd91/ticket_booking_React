@@ -4,7 +4,7 @@ import "./Booking.css";
 const Booking = (props) => {
   return (
     <section className="section-booking">
-      <form onChange={props.changehandler}>
+      <form className="booking" onChange={props.changehandler}>
         <div>
           <select
             className="departure-city"

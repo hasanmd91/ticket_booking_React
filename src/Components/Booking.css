@@ -2,7 +2,7 @@
   position: relative;
 }
 
-form {
+.booking {
   display: flex;
   flex-direction: row;
   justify-content: center;
