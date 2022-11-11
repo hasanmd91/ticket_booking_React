@@ -8,22 +8,28 @@ const Booking = (props) => {
         <div>
           <select
             className="departure-city"
-            value={props.departure}
+            defaultValue="choice"
             name="departure"
             onChange={props.changeHandler}
             required
           >
+            <option value="choice" disabled>
+              Pick departure
+            </option>
             {props.citylist}
           </select>
         </div>
         <div>
           <select
             className="destination-city"
-            value={props.destination}
+            defaultValue="choice"
             name="destination"
             onChange={props.changeHandler}
             required
           >
+            <option value="choice" disabled>
+              Pick destination
+            </option>
             {props.citylist}
           </select>
         </div>

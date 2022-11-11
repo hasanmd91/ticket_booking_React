@@ -7,7 +7,7 @@ const PaymentGateway = (props) => {
     <div className="payment-gateway">
       <h2>Enter card details</h2>
       <img src={CardImg} alt="illustration of a bank card" />
-      <form className="card-detail">
+      <form className="card-detail" onSubmit={props.ticketMaker}>
         <div>
           <label htmlFor="cardNum">Card Number:</label>
           <input
@@ -54,7 +54,9 @@ const PaymentGateway = (props) => {
         </div>
         <div>
           <label></label>
-          <button className="secondary-btn">Purchase</button>
+          <button className="secondary-btn" type="submit">
+            Purchase
+          </button>
         </div>
       </form>
     </div>
