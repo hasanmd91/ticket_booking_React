@@ -5,12 +5,14 @@ import "./Booking.css";
 
 class Booking extends Component {
   state = {
-    counter: 1,
-    departure: "helsinki",
-    destination: "",
-    date: "",
-    today: "",
-    ticketNumber: "",
+    note: {
+      counter: 1,
+      departure: "helsinki",
+      destination: "",
+      date: "",
+      today: "",
+      ticketNumber: "",
+    },
   };
 
   addOneHandler = (e) => {
@@ -106,15 +108,6 @@ class Booking extends Component {
             </select>
           </div>
 
-          <div className="input-people">
-            <button id="item-reduce" onClick={this.removeOneHandler}>
-              -
-            </button>
-            <p className="no-of-people">{this.state.counter}</p>
-            <button id="item-add" onClick={this.addOneHandler}>
-              +
-            </button>
-          </div>
           <div>
             <input
               className="booking-date"

@@ -1,8 +1,39 @@
+form {
+  color: #fff;
+}
 .client-info {
   position: absolute;
-
   right: 0;
   border: 1px solid #333;
   padding: 1rem;
   width: 400px;
+}
+
+.client-info label {
+  display: inline-block;
+  width: 150px;
+  margin-bottom: 1.5rem;
+}
+
+.client-info input {
+  height: 35px;
+  width: 230px;
+}
+
+.counters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counters label {
+  margin-bottom: 0;
+}
+
+.counters div {
+  display: inline-block;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

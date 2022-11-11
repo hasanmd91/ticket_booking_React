@@ -5,7 +5,7 @@ const InfoDetail = () => {
   return (
     <div className="client-info">
       <h3>Fill in your info</h3>
-      <div className="inputs">
+      <form className="inputs">
         <div>
           <label htmlFor="client-name">Full Name</label>
           <input type="text" name="client-name" id="client-name" />
@@ -18,51 +18,33 @@ const InfoDetail = () => {
           <label htmlFor="client-phone">Phone No.</label>
           <input type="number" name="client-phone" id="client-phone" />
         </div>
-        <div>
-          <label htmlFor="adult-count">Adult</label>
-          <select name="adult-count" id="adult-count">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+        <div className="counters">
+          <label>Adult</label>
+          <div>
+            <button id="adult-count-reduce">-</button>
+            <p id="adult-count">1</p>
+            <button id="adult-count-increase">+</button>
+          </div>
         </div>
-        <div>
+        <div className="counters">
           <label htmlFor="student-count">Student</label>
-          <select name="student-count" id="student-count">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <div>
+            <button id="student-count-reduce">-</button>
+            <p id="student-count">1</p>
+            <button id="student-count-increase">+</button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="student-count">Kids u.7 yrs</label>
-          <select name="student-count" id="student-count">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+
+        <div className="counters">
+          <label>Elderly</label>
+          <div>
+            <button id="elderly-count-reduce">-</button>
+            <p id="elderly-count">1</p>
+            <button id="elderly-count-increase">+</button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="elderly-count">Elderly</label>
-          <select name="elderly-count" id="elderly-count">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-      </div>
+        <button id="proceed-to-book">Proceed for Booking</button>
+      </form>
     </div>
   );
 };
