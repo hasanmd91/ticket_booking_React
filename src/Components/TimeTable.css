@@ -1,0 +1,37 @@
+.time-table {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #888;
+  color: #fff;
+  font-size: 24px;
+  padding: 1rem;
+}
+
+.times {
+  background-color: #f1f1f1;
+  padding: 2rem 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1rem;
+  list-style-type: none;
+}
+ul li p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ul li .price {
+  background-color: teal;
+  padding: 0.5rem 2rem;
+  color: #fff;
+}

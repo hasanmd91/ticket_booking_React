@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Cities } from "./Cities";
-import InfoDetail from "./InfoDetail";
+import TimeTable from "./TimeTable";
 import "./Booking.css";
 
 class Booking extends Component {
@@ -140,7 +140,8 @@ class Booking extends Component {
             ticketNumber={this.state.ticketNumber}
           />
         </div> */}
-        <InfoDetail />
+        {/* <InfoDetail /> */}
+        <TimeTable />
       </section>
     );
   }
