@@ -14,8 +14,7 @@ form {
 }
 
 select,
-.booking-date,
-button {
+.booking-date {
   height: 35px;
   width: 175px;
   margin: 10px;
@@ -62,7 +61,21 @@ select {
   text-transform: uppercase;
   height: 35px;
   width: auto;
+  padding: 0.5rem 1rem;
   border: 1px solid #fff;
+  border-radius: 5px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background-color: rgb(157, 252, 252);
+  color: #333;
+  text-transform: uppercase;
+  height: 35px;
+  width: auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid teal;
   border-radius: 5px;
   font-family: inherit;
   cursor: pointer;

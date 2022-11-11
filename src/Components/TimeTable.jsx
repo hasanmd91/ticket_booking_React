@@ -16,19 +16,19 @@ const TimeTable = () => {
           <li>
             <p className="time">9:00</p>
             <p className="price">17€</p>
-            <button className="proceed-to-info">Proceed</button>
+            <button className="proceed-to-info secondary-btn">Proceed</button>
           </li>
 
           <li>
-            <p className="time">9:00</p>
+            <p className="time">11:00</p>
             <p className="price">17€</p>
-            <button className="proceed-to-info">Proceed</button>
+            <button className="proceed-to-info secondary-btn">Proceed</button>
           </li>
 
           <li>
-            <p className="time">9:00</p>
+            <p className="time">15:00</p>
             <p className="price">17€</p>
-            <button className="proceed-to-info">Proceed</button>
+            <button className="proceed-to-info secondary-btn">Proceed</button>
           </li>
         </ul>
       </div>

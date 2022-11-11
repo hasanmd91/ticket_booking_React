@@ -1,6 +1,4 @@
 import Logo from "../Assets/bus-logo.png";
-import Nav from "./Nav";
-import HeroText from "./Hero-text";
 import "./Header.css";
 
 const Header = () => {
@@ -13,9 +11,31 @@ const Header = () => {
             <a href="#sample">Himalayan Express Bus Service</a>
           </h1>
         </div>
-        <Nav />
+        <nav>
+          <ul>
+            <li>
+              <a href="#sample">Book a ticket</a>
+            </li>
+            <li>
+              <a href="#sample">Search your ticket</a>
+            </li>
+            <li>
+              <a href="#sample">FAQ</a>
+            </li>
+            <li>
+              <a href="#sample">Help</a>
+            </li>
+          </ul>
+        </nav>
       </header>
-      <HeroText />
+      <div className="hero-text">
+        <h2>Himalayan Express Bus</h2>
+        <div className="feature-txt">
+          <p>Safer</p>
+          <p>Punctual</p>
+          <p>Responsible</p>
+        </div>
+      </div>
     </section>
   );
 };
