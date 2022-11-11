@@ -4,12 +4,13 @@ import "./Booking.css";
 const Booking = (props) => {
   return (
     <section className="section-booking">
-      <form className="booking" onChange={props.changehandler}>
+      <form className="booking">
         <div>
           <select
             className="departure-city"
             value={props.departure}
-            name={props.departure}
+            name="departure"
+            onChange={props.changeHandler}
             required
           >
             {props.citylist}
@@ -19,7 +20,8 @@ const Booking = (props) => {
           <select
             className="destination-city"
             value={props.destination}
-            name={props.destination}
+            name="destination"
+            onChange={props.changeHandler}
             required
           >
             {props.citylist}
@@ -30,9 +32,9 @@ const Booking = (props) => {
           <input
             className="booking-date"
             type="date"
-            min={props.date}
             value={props.date}
-            name={props.date}
+            name="date"
+            onChange={props.changeHandler}
             required
           ></input>
         </div>

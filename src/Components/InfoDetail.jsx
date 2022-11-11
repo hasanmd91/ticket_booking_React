@@ -13,7 +13,8 @@ const InfoDetail = (props) => {
             name="clientName"
             id="clientName"
             placeholder="For ex. John Doe"
-            value={props.changeHandler}
+            value={props.clientName}
+            onChange={props.changeHandler}
           />
         </div>
         <div>
@@ -23,7 +24,8 @@ const InfoDetail = (props) => {
             name="clientEmail"
             id="clientEmail"
             placeholder="For ex email@website.com"
-            value={props.changeHandler}
+            value={props.clientEmail}
+            onChange={props.changeHandler}
           />
         </div>
         <div>
@@ -32,13 +34,21 @@ const InfoDetail = (props) => {
             type="tel"
             name="clientPhone"
             id="clientPhone"
-            value={props.changeHandler}
+            value={props.clientPhone}
+            onChange={props.changeHandler}
           />
         </div>
 
         <div>
           <label htmlFor="counterAdult">Adult</label>
-          <input type="number" id="counterAdult" value={props.changeHandler} />
+          <input
+            type="number"
+            id="counterAdult"
+            name="counterAdult"
+            min="0"
+            value={props.counterAdult}
+            onChange={props.changeHandler}
+          />
         </div>
 
         <div>
@@ -46,7 +56,10 @@ const InfoDetail = (props) => {
           <input
             type="number"
             id="counterStudent"
-            value={props.changeHandler}
+            name="counterStudent"
+            min="0"
+            value={props.counterStudent}
+            onChange={props.changeHandler}
           />
         </div>
 
@@ -55,7 +68,10 @@ const InfoDetail = (props) => {
           <input
             type="number"
             id="counterElderly"
-            value={props.changeHandler}
+            name="counterElderly"
+            min="0"
+            value={props.counterElderly}
+            onChange={props.changeHandler}
           />
         </div>
         <button id="proceed-to-book" className="secondary-btn">
