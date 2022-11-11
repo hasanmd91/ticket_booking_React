@@ -28,6 +28,11 @@ img {
   padding: 0 0.5rem;
 }
 
+#cardExpiry,
+#cvc {
+  width: 15%;
+}
+
 .card-detail button {
   width: 200px;
 }

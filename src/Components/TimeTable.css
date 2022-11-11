@@ -20,7 +20,7 @@ button {
 
 .times {
   background-color: #f1f1f1;
-  padding: 2rem 0;
+  padding: 2rem;
   animation: slideDown 1s ease-in-out;
 }
 
@@ -38,10 +38,13 @@ button {
 
 ul li {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 1rem;
+  padding: 1rem;
   list-style-type: none;
+  background-color: #fff;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
 }
 ul li p {
   font-size: 20px;
