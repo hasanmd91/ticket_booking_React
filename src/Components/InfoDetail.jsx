@@ -3,63 +3,64 @@ import "./InfoDetail.css";
 
 const InfoDetail = (props) => {
   return (
-    <div className="client-info" onChange={props.changeHandler}>
-      <h2>Fill in your info</h2>
+    <div className="client-info">
+      <h2>Enter contact info</h2>
       <form className="inputs">
         <div>
-          <label htmlFor="client-name">Full Name</label>
-          <input type="text" name="clientName" id="client-name" />
+          <label htmlFor="clientName">Full Name</label>
+          <input
+            type="text"
+            name="clientName"
+            id="clientName"
+            placeholder="For ex. John Doe"
+            value={props.changeHandler}
+          />
         </div>
         <div>
-          <label htmlFor="client-email">Email</label>
-          <input type="tel" name="clientEmail" id="client-email" />
+          <label htmlFor="clientEmail">Email</label>
+          <input
+            type="tel"
+            name="clientEmail"
+            id="clientEmail"
+            placeholder="For ex email@website.com"
+            value={props.changeHandler}
+          />
         </div>
         <div>
-          <label htmlFor="client-phone">Phone No.</label>
-          <input type="number" name="clientPhone" id="client-phone" />
-        </div>
-        <div className="counters">
-          <label>Adult</label>
-          <div>
-            <button id="adult-count-reduce">-</button>
-            <p id="counterAdult" name="counterAdult">
-              {props.counterAdult}
-            </p>
-            <button id="adult-count-increase">+</button>
-          </div>
-        </div>
-        <div className="counters">
-          <label htmlFor="counterStudent">Student & Kid</label>
-          <div>
-            <button id="student-count-reduce" onClick={props.removeOneHandler}>
-              -
-            </button>
-            <p
-              id="counterStudent"
-              onClick={props.addOneHandler}
-              name="counterStudent"
-            >
-              {props.counterStudent}
-            </p>
-            <button id="student-count-increase">+</button>
-          </div>
+          <label htmlFor="clientPhone">Phone No.</label>
+          <input
+            type="tel"
+            name="clientPhone"
+            id="clientPhone"
+            value={props.changeHandler}
+          />
         </div>
 
-        <div className="counters">
-          <label htmlFor="counterElderly">Elderly</label>
-          <div>
-            <button id="elderly-count-reduce">-</button>
-            <p id="elderly-count" name="counterElderly">
-              {props.counterElderly}
-            </p>
-            <button id="elderly-count-increase">+</button>
-          </div>
-        </div>
         <div>
-          <button id="proceed-to-book" className="secondary-btn">
-            Proceed for Booking
-          </button>
+          <label htmlFor="counterAdult">Adult</label>
+          <input type="number" id="counterAdult" value={props.changeHandler} />
         </div>
+
+        <div>
+          <label htmlFor="counterStudent">Student & Kids</label>
+          <input
+            type="number"
+            id="counterStudent"
+            value={props.changeHandler}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="counterElderly">Elderly</label>
+          <input
+            type="number"
+            id="counterElderly"
+            value={props.changeHandler}
+          />
+        </div>
+        <button id="proceed-to-book" className="secondary-btn">
+          Proceed for Booking
+        </button>
       </form>
     </div>
   );
