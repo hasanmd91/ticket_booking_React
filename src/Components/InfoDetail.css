@@ -1,12 +1,23 @@
-form {
-  color: #fff;
-}
 .client-info {
-  position: absolute;
-  right: 0;
   border: 1px solid #333;
   padding: 1rem;
-  width: 400px;
+  width: 600px;
+  height: auto;
+  color: #fff;
+  margin: 0 auto;
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .client-info label {
@@ -31,9 +42,19 @@ form {
 }
 
 .counters div {
-  display: inline-block;
   width: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.counters div button {
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#proceed-to-book {
+  margin-top: 2rem;
 }
