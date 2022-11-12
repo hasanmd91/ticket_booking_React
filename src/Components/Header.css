@@ -41,18 +41,7 @@ header {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  margin: 32px;
-  text-transform: capitalize;
-}
-
-nav ul li {
-  list-style-type: none;
-  display: inline-block;
+  background-color: rgba(0, 128, 128, 0.85);
 }
 
 nav ul li a {
