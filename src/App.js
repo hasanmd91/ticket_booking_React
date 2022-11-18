@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Cities } from "./Components/Cities";
-import Booking from "./Components/Booking";
-import Header from "./Components/Header";
-import TimeTable from "./Components/TimeTable";
-import InfoDetail from "./Components/InfoDetail";
+import Booking from "./Components/Booking/Booking";
+import Header from "./Components/Headers/Header";
+import TimeTable from "./Components/Timetable/TimeTable";
+import InfoDetail from "./Components/Info/InfoDetail";
 import "./App.css";
 
 class App extends Component {
