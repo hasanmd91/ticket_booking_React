@@ -82,6 +82,12 @@ class App extends Component {
       email: "",
       phone: "",
     },
+    cardinfo: {
+      cardNum: "",
+      holderName: "",
+      cardExpiry: "",
+      cvc: "",
+    },
   };
 
   submithandeler = (e) => {
@@ -115,6 +121,17 @@ class App extends Component {
     this.setState({ proceed: false, infoDetails: true });
   };
 
+  cardinfochangeHandeler = (e) => {
+    this.setState({
+      cardinfo: { ...this.state.cardinfo, [e.target.name]: e.target.value },
+    });
+  };
+
+  cardinfoSubmitHandeler = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div>
@@ -134,7 +151,12 @@ class App extends Component {
           />
         )}
 
-        {this.state.infoDetails && <PaymentGateway />}
+        {this.state.infoDetails && (
+          <PaymentGateway
+            cardinfoSubmit={this.cardinfoSubmitHandeler}
+            cardinfochange={this.cardinfochangeHandeler}
+          />
+        )}
       </div>
     );
   }
