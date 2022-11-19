@@ -4,6 +4,7 @@ import Header from "./Components/Headers/Header";
 import TimeTable from "./Components/Timetable/TimeTable";
 import InfoDetail from "./Components/Info/InfoDetail";
 import "./App.css";
+import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
 
 // this big priceCalculetor function should be put in a new module
 //so that we can import it and it doesnt have to be here
@@ -68,16 +69,19 @@ const priceCalculetor = (city1, city2) => {
 
 class App extends Component {
   state = {
-    counterAdult: 0,
-    counterStudent: 0,
-    counterElderly: 0,
     departure: "",
     destination: "",
     price: "",
     date: "",
     bustimes: ["9.00", "11.00", "12.00", "15.00"],
-    ticketNumber: "",
     cityselceted: false,
+    proceed: false,
+    infoDetails: false,
+    Passengerinfo: {
+      name: "",
+      email: "",
+      phone: "",
+    },
   };
 
   submithandeler = (e) => {
@@ -93,6 +97,24 @@ class App extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  proceedHandeler = () => {
+    this.setState({ cityselceted: false, proceed: true });
+  };
+
+  infoChangeHandeler = (e) => {
+    this.setState({
+      Passengerinfo: {
+        ...this.state.Passengerinfo,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  infoSubmitHandeler = (e) => {
+    e.preventDefault();
+    this.setState({ proceed: false, infoDetails: true });
+  };
+
   render() {
     return (
       <div>
@@ -101,7 +123,18 @@ class App extends Component {
           submitCity={this.submithandeler}
           cityChange={this.cityChangeHandeler}
         />
-        {this.state.cityselceted && <TimeTable {...this.state} />}
+        {this.state.cityselceted && (
+          <TimeTable {...this.state} proceed={this.proceedHandeler} />
+        )}
+
+        {this.state.proceed && (
+          <InfoDetail
+            infoSubmit={this.infoSubmitHandeler}
+            infoChange={this.infoChangeHandeler}
+          />
+        )}
+
+        {this.state.infoDetails && <PaymentGateway />}
       </div>
     );
   }

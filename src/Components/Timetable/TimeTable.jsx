@@ -1,7 +1,15 @@
 import React from "react";
+import Button from "../Button/Button";
 import "./TimeTable.css";
 
-const TimeTable = ({ destination, departure, price, date, bustimes }) => {
+const TimeTable = ({
+  destination,
+  departure,
+  price,
+  date,
+  bustimes,
+  proceed,
+}) => {
   return (
     <div className="time-table">
       <h2>Available Departure Times</h2>
@@ -12,14 +20,12 @@ const TimeTable = ({ destination, departure, price, date, bustimes }) => {
         <p className="departure-date">{date}</p>
       </div>
       <div className="times">
-        {bustimes.map((el) => {
+        {bustimes.map((time) => {
           return (
             <div className="timetabels">
-              <p className="time">{el}</p>
+              <p className="time">{time}</p>
               <p className="price">{price} € </p>
-              <button className="proceed-to-info secondary-btn">
-                Proceed
-              </button>{" "}
+              <Button proceed={proceed} text={"proceed"} />
             </div>
           );
         })}

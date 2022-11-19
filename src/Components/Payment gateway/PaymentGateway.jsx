@@ -6,7 +6,7 @@ const PaymentGateway = (props) => {
   return (
     <div className="payment-gateway">
       <h2>Enter card details</h2>
-      <img src={CardImg} alt="illustration of a bank card" />
+      {/* <img src={CardImg} alt="illustration of a bank card" /> */}
       <form className="card-detail" onSubmit={props.ticketMaker}>
         <div>
           <label htmlFor="cardNum">Card Number:</label>
