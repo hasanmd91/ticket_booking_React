@@ -45,12 +45,7 @@ const Booking = (props) => {
         </div>
 
         <div>
-          <input
-            className="booking-date"
-            type="date"
-            name="date"
-            required
-          ></input>
+          <input className="booking-date" type="date" name="date"></input>
         </div>
 
         <button type="submit" className="primary-btn" id="proceed-to-timeline">
