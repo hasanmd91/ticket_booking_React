@@ -5,6 +5,8 @@ import TimeTable from "./Components/Timetable/TimeTable";
 import InfoDetail from "./Components/Info/InfoDetail";
 import "./App.css";
 import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
+import SampleTicket from "./Components/Sample Ticket/SampleTicket";
+import { v4 as uuid } from "uuid";
 
 // this big priceCalculetor function should be put in a new module
 //so that we can import it and it doesnt have to be here
@@ -77,6 +79,7 @@ class App extends Component {
     cityselceted: false,
     proceed: false,
     infoDetails: false,
+    cardGenerate: false,
     Passengerinfo: {
       name: "",
       email: "",
@@ -129,7 +132,7 @@ class App extends Component {
 
   cardinfoSubmitHandeler = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.setState({ infoDetails: false, cardGenerate: true });
   };
 
   render() {
@@ -156,6 +159,9 @@ class App extends Component {
             cardinfoSubmit={this.cardinfoSubmitHandeler}
             cardinfochange={this.cardinfochangeHandeler}
           />
+        )}
+        {this.state.cardGenerate && (
+          <SampleTicket {...this.state} ticketNumber={uuid()} />
         )}
       </div>
     );
