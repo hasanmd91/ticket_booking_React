@@ -1,10 +1,1 @@
-export const Cities = [
-  "Helsinki",
-  "Tampere",
-  "Turku",
-  "Oulu",
-  "Jyvaskyla",
-  "Lappeenranta",
-  "Vaasa",
-  "Kuopio",
-];
+export const Cities = ["Helsinki", "Tampere", "Turku", "Oulu", "Kuopio"];
