@@ -88,6 +88,7 @@ class App extends Component {
       price: "",
       date: "",
       ticketNumber: "",
+      selectedbustime: "",
       bustimes: ["9.00", "11.00", "12.00", "15.00"],
     },
 
@@ -128,8 +129,17 @@ class App extends Component {
     });
   };
 
-  proceedHandeler = () => {
-    this.setState({ cityselceted: false, proceed: true });
+  proceedHandeler = (id) => {
+    console.log(this.state.Passengerinfo.bustimes[id]);
+
+    this.setState({
+      cityselceted: false,
+      proceed: true,
+      Passengerinfo: {
+        ...this.state.Passengerinfo,
+        selectedbustime: this.state.Passengerinfo.bustimes[id],
+      },
+    });
   };
 
   infoChangeHandeler = (e) => {
@@ -176,7 +186,7 @@ class App extends Component {
         {this.state.cityselceted && (
           <TimeTable
             {...this.state.Passengerinfo}
-            proceed={this.proceedHandeler}
+            proceed={this.proceedHandeler.bind(this)}
           />
         )}
 

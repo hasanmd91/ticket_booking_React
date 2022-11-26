@@ -20,12 +20,12 @@ const TimeTable = ({
         <p className="departure-date">{date}</p>
       </div>
       <div className="times">
-        {bustimes.map((time) => {
+        {bustimes.map((time, id) => {
           return (
             <div className="timetabels">
               <p className="time">{time}</p>
               <p className="price">{price} € </p>
-              <Button proceed={proceed} text={"proceed"} />
+              <Button proceed={() => proceed(id)} text={"proceed"} />
             </div>
           );
         })}
