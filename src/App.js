@@ -164,15 +164,19 @@ class App extends Component {
 
   cardinfoSubmitHandeler = (e) => {
     e.preventDefault();
-    this.setState({
-      infoDetails: false,
-      cardGenerate: true,
-      Passengerinfo: {
-        ...this.state.Passengerinfo,
-        ticketNumber: uuid().slice(0, 13).toString(),
+    this.setState(
+      {
+        infoDetails: false,
+        cardGenerate: true,
+        Passengerinfo: {
+          ...this.state.Passengerinfo,
+          ticketNumber: uuid().slice(0, 13).toString(),
+        },
       },
-    });
-    createTicket(this.state.Passengerinfo);
+      () => {
+        createTicket(this.state.Passengerinfo);
+      }
+    );
   };
 
   render() {
