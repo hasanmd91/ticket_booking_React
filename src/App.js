@@ -161,7 +161,7 @@ class App extends Component {
           />
         )}
         {this.state.cardGenerate && (
-          <SampleTicket {...this.state} ticketNumber={uuid()} />
+          <SampleTicket {...this.state} ticketNumber={uuid().slice(0, 15)} />
         )}
       </div>
     );
