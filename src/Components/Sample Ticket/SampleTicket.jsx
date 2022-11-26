@@ -12,9 +12,9 @@ const SampleTicket = (props) => {
 
       <div className="info-wrapper">
         <div className="personal-info">
-          <p>Name: {props.Passengerinfo.name}</p>
-          <p>Email:&nbsp; {props.Passengerinfo.email}</p>
-          <p>Phone: &nbsp;{props.Passengerinfo.phone}</p>
+          <p>Name: {props.name}</p>
+          <p>Email:&nbsp; {props.email}</p>
+          <p>Phone: &nbsp;{props.phone}</p>
         </div>
         <div className="company-info">
           <h3>Himalayan Express Bus</h3>

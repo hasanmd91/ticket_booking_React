@@ -7,6 +7,8 @@ import "./App.css";
 import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
 import SampleTicket from "./Components/Sample Ticket/SampleTicket";
 import { v4 as uuid } from "uuid";
+import { db } from "./Backend/firbase_config";
+import { collection, addDoc } from "firebase/firestore";
 
 // this big priceCalculetor function should be put in a new module
 //so that we can import it and it doesnt have to be here
@@ -69,22 +71,31 @@ const priceCalculetor = (city1, city2) => {
   return price;
 };
 
+const ticketCollectionRef = collection(db, "ticketinfo");
+
+const createTicket = async (data) => {
+  await addDoc(ticketCollectionRef, data);
+};
+
 class App extends Component {
   state = {
-    departure: "",
-    destination: "",
-    price: "",
-    date: "",
-    bustimes: ["9.00", "11.00", "12.00", "15.00"],
-    cityselceted: false,
-    proceed: false,
-    infoDetails: false,
-    cardGenerate: false,
     Passengerinfo: {
       name: "",
       email: "",
       phone: "",
+      departure: "",
+      destination: "",
+      price: "",
+      date: "",
+      ticketNumber: "",
+      bustimes: ["9.00", "11.00", "12.00", "15.00"],
     },
+
+    cityselceted: false,
+    proceed: false,
+    infoDetails: false,
+    cardGenerate: false,
+
     cardinfo: {
       cardNum: "",
       holderName: "",
@@ -97,13 +108,24 @@ class App extends Component {
     e.preventDefault();
     this.setState({
       cityselceted: true,
-      price: priceCalculetor(this.state.departure, this.state.destination),
+      Passengerinfo: {
+        ...this.state.Passengerinfo,
+        price: priceCalculetor(
+          this.state.Passengerinfo.departure,
+          this.state.Passengerinfo.destination
+        ),
+      },
     });
     e.target.reset();
   };
 
   cityChangeHandeler = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({
+      Passengerinfo: {
+        ...this.state.Passengerinfo,
+        [e.target.name]: e.target.value,
+      },
+    });
   };
 
   proceedHandeler = () => {
@@ -132,7 +154,15 @@ class App extends Component {
 
   cardinfoSubmitHandeler = (e) => {
     e.preventDefault();
-    this.setState({ infoDetails: false, cardGenerate: true });
+    this.setState({
+      infoDetails: false,
+      cardGenerate: true,
+      Passengerinfo: {
+        ...this.state.Passengerinfo,
+        ticketNumber: uuid().slice(0, 13).toString(),
+      },
+    });
+    createTicket(this.state.Passengerinfo);
   };
 
   render() {
@@ -144,7 +174,10 @@ class App extends Component {
           cityChange={this.cityChangeHandeler}
         />
         {this.state.cityselceted && (
-          <TimeTable {...this.state} proceed={this.proceedHandeler} />
+          <TimeTable
+            {...this.state.Passengerinfo}
+            proceed={this.proceedHandeler}
+          />
         )}
 
         {this.state.proceed && (
@@ -161,7 +194,7 @@ class App extends Component {
           />
         )}
         {this.state.cardGenerate && (
-          <SampleTicket {...this.state} ticketNumber={uuid().slice(0, 15)} />
+          <SampleTicket {...this.state.Passengerinfo} />
         )}
       </div>
     );
