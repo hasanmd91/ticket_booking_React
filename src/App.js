@@ -79,7 +79,7 @@ const createTicket = async (data) => {
 
 class App extends Component {
   state = {
-    Passengerinfo: {
+    passengerinfo: {
       name: "",
       email: "",
       phone: "",
@@ -89,9 +89,9 @@ class App extends Component {
       date: "",
       ticketNumber: "",
       selectedbustime: "",
-      bustimes: ["9.00", "11.00", "12.00", "15.00"],
     },
 
+    bustimes: ["9.00", "11.00", "12.00", "15.00"],
     cityselceted: false,
     proceed: false,
     infoDetails: false,
@@ -109,11 +109,11 @@ class App extends Component {
     e.preventDefault();
     this.setState({
       cityselceted: true,
-      Passengerinfo: {
-        ...this.state.Passengerinfo,
+      passengerinfo: {
+        ...this.state.passengerinfo,
         price: priceCalculetor(
-          this.state.Passengerinfo.departure,
-          this.state.Passengerinfo.destination
+          this.state.passengerinfo.departure,
+          this.state.passengerinfo.destination
         ),
       },
     });
@@ -122,30 +122,28 @@ class App extends Component {
 
   cityChangeHandeler = (e) => {
     this.setState({
-      Passengerinfo: {
-        ...this.state.Passengerinfo,
+      passengerinfo: {
+        ...this.state.passengerinfo,
         [e.target.name]: e.target.value,
       },
     });
   };
 
   proceedHandeler = (id) => {
-    console.log(this.state.Passengerinfo.bustimes[id]);
-
     this.setState({
       cityselceted: false,
       proceed: true,
-      Passengerinfo: {
-        ...this.state.Passengerinfo,
-        selectedbustime: this.state.Passengerinfo.bustimes[id],
+      passengerinfo: {
+        ...this.state.passengerinfo,
+        selectedbustime: this.state.bustimes[id],
       },
     });
   };
 
   infoChangeHandeler = (e) => {
     this.setState({
-      Passengerinfo: {
-        ...this.state.Passengerinfo,
+      passengerinfo: {
+        ...this.state.passengerinfo,
         [e.target.name]: e.target.value,
       },
     });
@@ -168,13 +166,13 @@ class App extends Component {
       {
         infoDetails: false,
         cardGenerate: true,
-        Passengerinfo: {
-          ...this.state.Passengerinfo,
+        passengerinfo: {
+          ...this.state.passengerinfo,
           ticketNumber: uuid().slice(0, 13).toString(),
         },
       },
       () => {
-        createTicket(this.state.Passengerinfo);
+        createTicket(this.state.passengerinfo);
       }
     );
   };
@@ -189,7 +187,7 @@ class App extends Component {
         />
         {this.state.cityselceted && (
           <TimeTable
-            {...this.state.Passengerinfo}
+            {...this.state}
             proceed={this.proceedHandeler.bind(this)}
           />
         )}
@@ -208,7 +206,7 @@ class App extends Component {
           />
         )}
         {this.state.cardGenerate && (
-          <SampleTicket {...this.state.Passengerinfo} />
+          <SampleTicket {...this.state.passengerinfo} />
         )}
       </div>
     );
