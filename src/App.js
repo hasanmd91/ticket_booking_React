@@ -9,6 +9,7 @@ import SampleTicket from "./Components/Sample Ticket/SampleTicket";
 import { v4 as uuid } from "uuid";
 import { db } from "./Backend/firbase_config";
 import { collection, addDoc } from "firebase/firestore";
+import Fetchdata from "./Components/Fetchticketdata/Fetchdata";
 
 // this big priceCalculetor function should be put in a new module
 //so that we can import it and it doesnt have to be here
@@ -91,7 +92,7 @@ class App extends Component {
       selectedbustime: "",
     },
 
-    bustimes: ["9.00", "11.00", "12.00", "15.00"],
+    bustimes: ["9.00", "11.00", "12.00", "15.00", "16.00", "19.00 "],
     cityselceted: false,
     proceed: false,
     infoDetails: false,
@@ -208,6 +209,7 @@ class App extends Component {
         {this.state.cardGenerate && (
           <SampleTicket {...this.state.passengerinfo} />
         )}
+        <Fetchdata />
       </div>
     );
   }
