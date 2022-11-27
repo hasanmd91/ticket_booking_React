@@ -10,15 +10,10 @@ import { v4 as uuid } from "uuid";
 import { db } from "./Backend/firbase_config";
 import { collection, addDoc } from "firebase/firestore";
 import Fetchdata from "./Components/Fetchticketdata/Fetchdata";
-// import Card from "./Components/Fetchticketdata/Card";
-
-// this big priceCalculetor function should be put in a new module
-//so that we can import it and it doesnt have to be here
 
 const priceCalculetor = (city1, city2) => {
   let price;
   if (city1 === city2) {
-    console.log("please choose different city");
   } else if (
     (city1 === "Helsinki" && city2 === "Turku") ||
     (city1 === "Turku" && city2 === "Helsinki")
@@ -43,12 +38,12 @@ const priceCalculetor = (city1, city2) => {
     (city1 === "Turku" && city2 === "Tampere") ||
     (city1 === "Tampere" && city2 === "Turku")
   ) {
-    price = 32;
+    price = 25;
   } else if (
     (city1 === "Turku" && city2 === "Oulu") ||
     (city1 === "Oulu" && city2 === "Turku")
   ) {
-    price = 32;
+    price = 40;
   } else if (
     (city1 === "Turku" && city2 === "Kuopio") ||
     (city1 === "Kuopio" && city2 === "Turku")
@@ -58,7 +53,7 @@ const priceCalculetor = (city1, city2) => {
     (city1 === "Tampere" && city2 === "Oulu") ||
     (city1 === "Oulu" && city2 === "Tampere")
   ) {
-    price = 32;
+    price = 40;
   } else if (
     (city1 === "Tampere" && city2 === "Kuopio") ||
     (city1 === "Kuopio" && city2 === "Tampere")
@@ -68,7 +63,7 @@ const priceCalculetor = (city1, city2) => {
     (city1 === "Oulu" && city2 === "Kuopio") ||
     (city1 === "Kuopio" && city2 === "Oulu")
   ) {
-    price = 33;
+    price = 30;
   }
   return price;
 };
@@ -211,7 +206,6 @@ class App extends Component {
           <SampleTicket {...this.state.passengerinfo} />
         )}
         <Fetchdata />
-        {/* <Card /> */}
       </div>
     );
   }
