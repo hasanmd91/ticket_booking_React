@@ -10,6 +10,7 @@ import { v4 as uuid } from "uuid";
 import { db } from "./Backend/firbase_config";
 import { collection, addDoc } from "firebase/firestore";
 import Fetchdata from "./Components/Fetchticketdata/Fetchdata";
+// import Card from "./Components/Fetchticketdata/Card";
 
 // this big priceCalculetor function should be put in a new module
 //so that we can import it and it doesnt have to be here
@@ -210,6 +211,7 @@ class App extends Component {
           <SampleTicket {...this.state.passengerinfo} />
         )}
         <Fetchdata />
+        {/* <Card /> */}
       </div>
     );
   }
