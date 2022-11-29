@@ -1,101 +1,211 @@
 import React, { Component } from "react";
-import { Cities } from "./Components/Cities";
-import Booking from "./Components/Booking";
-import Header from "./Components/Header";
-import TimeTable from "./Components/TimeTable";
-import InfoDetail from "./Components/InfoDetail";
+import Booking from "./Components/Booking/Booking";
+import Header from "./Components/Headers/Header";
+import TimeTable from "./Components/Timetable/TimeTable";
+import InfoDetail from "./Components/Info/InfoDetail";
 import "./App.css";
+import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
+import SampleTicket from "./Components/Sample Ticket/SampleTicket";
+import { v4 as uuid } from "uuid";
+import { db } from "./Backend/firbase_config";
+import { collection, addDoc } from "firebase/firestore";
+import Fetchdata from "./Components/Fetchticketdata/Fetchdata";
+
+const priceCalculetor = (city1, city2) => {
+  let price;
+  if (city1 === city2) {
+  } else if (
+    (city1 === "Helsinki" && city2 === "Turku") ||
+    (city1 === "Turku" && city2 === "Helsinki")
+  ) {
+    price = 31;
+  } else if (
+    (city1 === "Helsinki" && city2 === "Tampere") ||
+    (city1 === "Tampere" && city2 === "Helsinki")
+  ) {
+    price = 22;
+  } else if (
+    (city1 === "Helsinki" && city2 === "Oulu") ||
+    (city1 === "Oulu" && city2 === "Helsinki")
+  ) {
+    price = 50;
+  } else if (
+    (city1 === "Helsinki" && city2 === "Kuopio") ||
+    (city1 === "Kuopio" && city2 === "Helsinki")
+  ) {
+    price = 32;
+  } else if (
+    (city1 === "Turku" && city2 === "Tampere") ||
+    (city1 === "Tampere" && city2 === "Turku")
+  ) {
+    price = 25;
+  } else if (
+    (city1 === "Turku" && city2 === "Oulu") ||
+    (city1 === "Oulu" && city2 === "Turku")
+  ) {
+    price = 40;
+  } else if (
+    (city1 === "Turku" && city2 === "Kuopio") ||
+    (city1 === "Kuopio" && city2 === "Turku")
+  ) {
+    price = 32;
+  } else if (
+    (city1 === "Tampere" && city2 === "Oulu") ||
+    (city1 === "Oulu" && city2 === "Tampere")
+  ) {
+    price = 40;
+  } else if (
+    (city1 === "Tampere" && city2 === "Kuopio") ||
+    (city1 === "Kuopio" && city2 === "Tampere")
+  ) {
+    price = 32;
+  } else if (
+    (city1 === "Oulu" && city2 === "Kuopio") ||
+    (city1 === "Kuopio" && city2 === "Oulu")
+  ) {
+    price = 30;
+  }
+  return price;
+};
+
+const ticketCollectionRef = collection(db, "ticketinfo");
+
+const createTicket = async (data) => {
+  await addDoc(ticketCollectionRef, data);
+};
 
 class App extends Component {
   state = {
-    note: {
-      counterAdult: 0,
-      counterStudent: 0,
-      counterElderly: 0,
-      departure: "helsinki",
+    passengerinfo: {
+      name: "",
+      email: "",
+      phone: "",
+      departure: "",
       destination: "",
+      price: "",
       date: "",
-      today: "",
       ticketNumber: "",
+      selectedbustime: "",
+    },
+
+    bustimes: ["9.00", "11.00", "12.00", "15.00", "16.00", "19.00 "],
+    cityselceted: false,
+    proceed: false,
+    infoDetails: false,
+    cardGenerate: false,
+
+    cardinfo: {
+      cardNum: "",
+      holderName: "",
+      cardExpiry: "",
+      cvc: "",
     },
   };
 
-  addOneHandler = (e) => {
+  submithandeler = (e) => {
     e.preventDefault();
     this.setState({
-      counterAdult: {
-        ...this.state.note,
-        counterAdult: this.state.counterAdult + 1,
+      cityselceted: true,
+      passengerinfo: {
+        ...this.state.passengerinfo,
+        price: priceCalculetor(
+          this.state.passengerinfo.departure,
+          this.state.passengerinfo.destination
+        ),
+      },
+    });
+    e.target.reset();
+  };
+
+  cityChangeHandeler = (e) => {
+    this.setState({
+      passengerinfo: {
+        ...this.state.passengerinfo,
+        [e.target.name]: e.target.value,
       },
     });
   };
 
-  removeOneHandler = (e) => {
-    e.preventDefault();
-    // if (this.state.counter > 0) {
-    //   this.setState({
-    //     counter: { ...this.state.note, counter: this.state.counter - 1 },
-    //   });
-    // }
-  };
-
-  changeHandler = (e) => {
+  proceedHandeler = (id) => {
     this.setState({
-      note: { ...this.state.note, [e.target.name]: e.target.value },
-    });
-    console.log({ ...this.state.note });
-  };
-
-  gettingToday = () => {
-    let newDate = new Date();
-    let date = newDate.getDate();
-    let month = newDate.getMonth() + 1;
-    let year = newDate.getFullYear();
-
-    return this.setState({
-      today: `${year}-${month < 10 ? `0${month}` : `${month}`}-${date}`,
+      cityselceted: false,
+      proceed: true,
+      passengerinfo: {
+        ...this.state.passengerinfo,
+        selectedbustime: this.state.bustimes[id],
+      },
     });
   };
 
-  ticketNumberMaker = () => {
-    let code = "";
-    let chars = "0123456789";
-    for (let i = 0; i < 10; i++) {
-      code += chars.charAt(Math.random() * chars.length);
-    }
-    return code;
-  };
-
-  ticketNumberHandler = (e) => {
-    e.preventDefault();
+  infoChangeHandeler = (e) => {
     this.setState({
-      ticketNumber: this.ticketNumberMaker(),
+      passengerinfo: {
+        ...this.state.passengerinfo,
+        [e.target.name]: e.target.value,
+      },
     });
+  };
+
+  infoSubmitHandeler = (e) => {
+    e.preventDefault();
+    this.setState({ proceed: false, infoDetails: true });
+  };
+
+  cardinfochangeHandeler = (e) => {
+    this.setState({
+      cardinfo: { ...this.state.cardinfo, [e.target.name]: e.target.value },
+    });
+  };
+
+  cardinfoSubmitHandeler = (e) => {
+    e.preventDefault();
+    this.setState(
+      {
+        infoDetails: false,
+        cardGenerate: true,
+        passengerinfo: {
+          ...this.state.passengerinfo,
+          ticketNumber: uuid().slice(0, 13).toString(),
+        },
+      },
+      () => {
+        createTicket(this.state.passengerinfo);
+      }
+    );
   };
 
   render() {
-    const citiesList = Cities.map((city) => {
-      return (
-        <option value={city} key={city}>
-          {city}
-        </option>
-      );
-    });
     return (
       <div>
         <Header />
         <Booking
-          citylist={citiesList}
-          changeHandler={this.changeHandler}
-          counterAdult={this.state.note.counterAdult}
-          {...this.state.note}
+          submitCity={this.submithandeler}
+          cityChange={this.cityChangeHandeler}
         />
-        <TimeTable />
-        <InfoDetail
-          removeOneHandler={this.removeOneHandler}
-          addOneHandler={this.addOneHandler}
-          {...this.state.note}
-        />
+        {this.state.cityselceted && (
+          <TimeTable
+            {...this.state}
+            proceed={this.proceedHandeler.bind(this)}
+          />
+        )}
+
+        {this.state.proceed && (
+          <InfoDetail
+            infoSubmit={this.infoSubmitHandeler}
+            infoChange={this.infoChangeHandeler}
+          />
+        )}
+
+        {this.state.infoDetails && (
+          <PaymentGateway
+            cardinfoSubmit={this.cardinfoSubmitHandeler}
+            cardinfochange={this.cardinfochangeHandeler}
+          />
+        )}
+        {this.state.cardGenerate && (
+          <SampleTicket {...this.state.passengerinfo} />
+        )}
+        <Fetchdata />
       </div>
     );
   }

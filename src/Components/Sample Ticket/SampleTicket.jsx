@@ -6,17 +6,15 @@ const SampleTicket = (props) => {
     <div className="ticket-wrapper">
       <div className="cities">
         <p>{props.departure}</p>
-        <p>&rarr;</p>
         <p>{props.destination}</p>
         <p>{props.date}</p>
       </div>
 
       <div className="info-wrapper">
         <div className="personal-info">
-          <p>Name: {props.clientName}</p>
-          <p>Adult:&nbsp; {props.counterAdult}</p>
-          <p>Student: &nbsp;{props.counterStudent}</p>
-          <p>Elderly:&nbsp;{props.counterElderly}</p>
+          <p>Name: {props.name}</p>
+          <p>Email:&nbsp; {props.email}</p>
+          <p>Phone: &nbsp;{props.phone}</p>
         </div>
         <div className="company-info">
           <h3>Himalayan Express Bus</h3>
