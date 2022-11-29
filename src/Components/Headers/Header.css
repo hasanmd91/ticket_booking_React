@@ -11,14 +11,13 @@
 
 header {
   background-color: rgba(0, 128, 128, 0.85);
-  padding: 10px 16px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.logo {
-  display: flex;
+.logo h1 {
   justify-content: flex-start;
   align-items: center;
 }
@@ -41,13 +40,13 @@ header {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  background-color: rgba(0, 128, 128, 0.85);
 }
 
 nav ul li a {
+  display: inline-flex;
   text-decoration: none;
   color: #fff;
-  margin: 32px;
+  padding: 2rem;
   text-transform: capitalize;
 }
 

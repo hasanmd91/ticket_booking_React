@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../../Backend/firbase_config";
 import { collection, getDocs } from "firebase/firestore";
-import Card from "../Fetchticketdata/Card";
+import ShowTicket from "./ShowTicket";
+
+import "./Fetchdata.css";
 
 const Fetchdata = () => {
   const [tickets, setTickets] = useState([]);
@@ -34,12 +36,12 @@ const Fetchdata = () => {
   };
 
   return (
-    <div>
+    <div className="fetch-data">
       <form onSubmit={submitHandeler} onChange={changeHandeler}>
         <input type="text" />
-        <button type="submit"> Fetchdata</button>
+        <button type="submit">Search Ticket</button>
       </form>
-      {query && singleTicket.map((ticket) => <Card ticket={ticket} />)}
+      {query && singleTicket.map((ticket) => <ShowTicket ticket={ticket} />)}
     </div>
   );
 };

@@ -1,4 +1,6 @@
-// import Logo from "./Assets/bus-logo.png";
+import React from "react";
+import Fetchdata from "../Fetchticketdata/Fetchdata";
+
 import "./Header.css";
 
 const Header = () => {
@@ -6,7 +8,6 @@ const Header = () => {
     <section className="hero-section">
       <header>
         <div className="logo">
-          {/* <img className="img-logo" src={Logo} alt="Logo"></img> */}
           <h1 className="logo-txt">
             <a href="#sample">Himalayan Express Bus Service</a>
           </h1>
@@ -28,6 +29,7 @@ const Header = () => {
           </ul>
         </nav>
       </header>
+      <Fetchdata />
       <div className="hero-text">
         <h2>Himalayan Express Bus</h2>
         <div className="feature-txt">

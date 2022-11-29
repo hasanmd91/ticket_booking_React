@@ -5,7 +5,7 @@ import TimeTable from "./Components/Timetable/TimeTable";
 import InfoDetail from "./Components/Info/InfoDetail";
 import "./App.css";
 import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
-import SampleTicket from "./Components/Sample Ticket/SampleTicket";
+import SampleTicket from "./Components/SampleTicket/SampleTicket";
 import { v4 as uuid } from "uuid";
 import { db } from "./Backend/firbase_config";
 import { collection, addDoc } from "firebase/firestore";
