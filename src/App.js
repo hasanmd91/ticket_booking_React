@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import Booking from "./Components/Booking/Booking";
 import Header from "./Components/Headers/Header";
 import TimeTable from "./Components/Timetable/TimeTable";
@@ -176,37 +178,39 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <Booking
-          submitCity={this.submithandeler}
-          cityChange={this.cityChangeHandeler}
-        />
-        {this.state.cityselceted && (
-          <TimeTable
-            {...this.state}
-            proceed={this.proceedHandeler.bind(this)}
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Booking
+            submitCity={this.submithandeler}
+            cityChange={this.cityChangeHandeler}
           />
-        )}
+          {this.state.cityselceted && (
+            <TimeTable
+              {...this.state}
+              proceed={this.proceedHandeler.bind(this)}
+            />
+          )}
 
-        {this.state.proceed && (
-          <InfoDetail
-            infoSubmit={this.infoSubmitHandeler}
-            infoChange={this.infoChangeHandeler}
-          />
-        )}
+          {this.state.proceed && (
+            <InfoDetail
+              infoSubmit={this.infoSubmitHandeler}
+              infoChange={this.infoChangeHandeler}
+            />
+          )}
 
-        {this.state.infoDetails && (
-          <PaymentGateway
-            cardinfoSubmit={this.cardinfoSubmitHandeler}
-            cardinfochange={this.cardinfochangeHandeler}
-          />
-        )}
-        {this.state.cardGenerate && (
-          <SampleTicket {...this.state.passengerinfo} />
-        )}
-        <Fetchdata />
-      </div>
+          {this.state.infoDetails && (
+            <PaymentGateway
+              cardinfoSubmit={this.cardinfoSubmitHandeler}
+              cardinfochange={this.cardinfochangeHandeler}
+            />
+          )}
+          {this.state.cardGenerate && (
+            <SampleTicket {...this.state.passengerinfo} />
+          )}
+          <Fetchdata />
+        </div>
+      </BrowserRouter>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Fetchdata from "../Fetchticketdata/Fetchdata";
 
 import "./Header.css";
@@ -15,16 +16,16 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href="#sample">Book a ticket</a>
+              <NavLink href="#sample">Book a ticket</NavLink>
             </li>
             <li>
-              <a href="#sample">Search your ticket</a>
+              <NavLink href="#sample">Search your ticket</NavLink>
             </li>
             <li>
-              <a href="#sample">FAQ</a>
+              <NavLink href="#sample">FAQ</NavLink>
             </li>
             <li>
-              <a href="#sample">Help</a>
+              <NavLink href="#sample">Help</NavLink>
             </li>
           </ul>
         </nav>

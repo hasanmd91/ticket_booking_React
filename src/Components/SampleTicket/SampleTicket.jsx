@@ -1,20 +1,28 @@
 import React from "react";
 import "./SampleTicket.css";
 
-const SampleTicket = (props) => {
+const SampleTicket = ({
+  departure,
+  destination,
+  date,
+  name,
+  email,
+  phone,
+  ticketNumber,
+}) => {
   return (
     <div className="ticket-wrapper">
       <div className="cities">
-        <p>{props.departure}</p>
-        <p>{props.destination}</p>
-        <p>{props.date}</p>
+        <p>{departure}</p>
+        <p>{destination}</p>
+        <p>{date}</p>
       </div>
 
       <div className="info-wrapper">
         <div className="personal-info">
-          <p>Name: {props.name}</p>
-          <p>Email:&nbsp; {props.email}</p>
-          <p>Phone: &nbsp;{props.phone}</p>
+          <p>Name: {name}</p>
+          <p>Email:&nbsp; {email}</p>
+          <p>Phone: &nbsp;{phone}</p>
         </div>
         <div className="company-info">
           <h3>Himalayan Express Bus</h3>
@@ -23,8 +31,8 @@ const SampleTicket = (props) => {
         </div>
       </div>
       <div className="ticket-info">
-        <div>{props.ticketNumber}</div>
-        <div className="ticket-barcode">{props.ticketNumber}</div>
+        <div>{ticketNumber}</div>
+        <div className="ticket-barcode">{ticketNumber}</div>
       </div>
     </div>
   );

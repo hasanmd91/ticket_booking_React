@@ -24,7 +24,7 @@ const PaymentGateway = ({ cardinfoSubmit, cardinfochange }) => {
 
         <div>
           <label htmlFor="cardExpiry">Expirty Date:</label>
-          <input type="date" id="cardExpiry" name="cardExpiry" />
+          <input type="month" min="2022-11" id="cardExpiry" name="cardExpiry" />
         </div>
         <div>
           <label htmlFor="CVC">CVC:</label>

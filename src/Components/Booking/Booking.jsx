@@ -1,14 +1,10 @@
 import React from "react";
 import "./Booking.css";
 
-const Booking = (props) => {
+const Booking = ({ submitCity, cityChange }) => {
   return (
     <section className="section-booking">
-      <form
-        className="booking"
-        onSubmit={props.submitCity}
-        onChange={props.cityChange}
-      >
+      <form className="booking" onSubmit={submitCity} onChange={cityChange}>
         <div>
           <select
             className="departure-city"
