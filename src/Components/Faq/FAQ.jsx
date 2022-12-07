@@ -6,7 +6,7 @@ const FaqList = () => {
     <div className="faq-wrapper">
       <div className="qsn-ans">
         <div className="qsn">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, porro?
+         first question?
         </div>
         <div className="ans">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
