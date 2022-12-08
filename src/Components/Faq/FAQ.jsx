@@ -1,59 +1,38 @@
-import React from "react";
-import "./FAQ.css";
+import React from 'react';
+import FaqData from 'react-faq-component';
 
-const FaqList = () => {
-  return (
+function FAQ() {
+  
+  const data1 = {
+ 
+   rows: [
+   {
+    title: 'Is the service disable friendly?',
+    content: 'Himalayan Travels is committed to making travel widely accessible, regardless of ability or disability.',
+    content: 'Himalayan Travels is committed to making travel widely accessible, regardless of ability or disability.',
+   },
+   {
+    title: 'Compensations?',
+    content:`You can apply for compensation using this form in the following cases:
+    
+    Your long-distance train journey was delayed by at least 60 minutes.
+    You have a commuter season ticket and the commuter trains are significantly late.
+    The delay caused you extra costs.
+    You or your luggage were damaged during your train journey.`
+   
+   },
+  ],
+  };
+  
+return (
+  <div>
+    <h2 className="section-title">Frequently Asked Questions</h2>
     <div className="faq-wrapper">
-      <div className="qsn-ans">
-        <div className="qsn">
-         first question?
-        </div>
-        <div className="ans">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-          blanditiis illum quos voluptas repellat. Ullam maxime dignissimos
-          tempora facere, aliquid animi commodi quisquam possimus nesciunt illum
-          quod atque id porro natus tempore fugit ab saepe!
-        </div>
-      </div>
-      <div className="qsn-ans">
-        <div className="qsn">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, fuga?
-        </div>
-        <div className="ans">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nihil eos
-          veniam voluptatem iste, placeat, molestiae iusto debitis aspernatur
-          mollitia non dolores porro. Qui nostrum modi temporibus nemo
-          repudiandae, magnam aliquid quam harum vitae nulla. Quisquam, vero
-          eligendi! Quibusdam, vel?
-        </div>
-      </div>
-      <div className="qsn-ans">
-        <div className="qsn">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi facere
-          consequatur sapiente?
-        </div>
-        <div className="ans">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-          exercitationem necessitatibus nesciunt velit optio, repellat
-          asperiores ratione dolorem vitae assumenda tempore culpa doloremque
-          debitis? Reprehenderit?
-        </div>
-      </div>
-      <div className="qsn-ans">
-        <div className="qsn">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit?
-        </div>
-        <div className="ans">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ab culpa
-          blanditiis omnis officiis reprehenderit quia, earum sed architecto.
-          Nam ratione dolorem minima libero autem laborum suscipit excepturi at
-          voluptatibus modi, quasi, expedita magnam earum. Asperiores voluptatem
-          omnis quo cupiditate voluptatibus voluptas eius culpa, nemo, optio
-          sunt laborum. Est, quas.
-        </div>
-      </div>
+      <FaqData data={data1} />
     </div>
+   </div>
   );
-};
+  }
 
-export default FaqList;
+
+  export default FAQ;
