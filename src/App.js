@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Booking from "./Components/Booking/Booking";
 import Header from "./Components/Headers/Header";
 import TimeTable from "./Components/Timetable/TimeTable";
+import FAQ from "./Components/Faq/FAQ";
 import InfoDetail from "./Components/Info/InfoDetail";
 import "./App.css";
 import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
@@ -209,8 +210,11 @@ class App extends Component {
             <SampleTicket {...this.state.passengerinfo} />
           )}
           <Fetchdata />
+
+          <FAQ/>
         </div>
       </BrowserRouter>
+      
     );
   }
 }

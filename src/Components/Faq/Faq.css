@@ -4,23 +4,3 @@
   position: relative;
 }
 
-.qsn-ans {
-  padding: 1rem;
-}
-
-.qsn {
-  background-color: teal;
-  padding: 1rem;
-  color: #fff;
-}
-
-.ans {
-  position: absolute;
-  height: 0;
-  overflow: hidden;
-}
-
-.qsn.active {
-  height: auto;
-  overflow: visible;
-}
