@@ -1,6 +1,12 @@
+.section-title{
+  margin-left: 20px;
+}
+
 .faq-wrapper {
   margin: 0 auto;
-  max-width: 900px;
+ margin-left: 20px;
   position: relative;
+  color: red;
+  
 }
 
