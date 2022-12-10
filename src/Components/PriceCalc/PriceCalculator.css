@@ -1,0 +1,25 @@
+.calculator-wrapper {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+.calculator-wrapper h2 {
+    color: #fff;
+    background-color: teal;
+    text-align: center;
+}
+
+table {
+    margin: 30px auto;
+}
+
+table, td, th {
+    border: 1px dotted #888;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: .5rem;
+    width: 150px;
+}

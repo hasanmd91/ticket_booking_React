@@ -6,13 +6,15 @@ import Header from "./Components/Headers/Header";
 import TimeTable from "./Components/Timetable/TimeTable";
 import FAQ from "./Components/Faq/FAQ";
 import InfoDetail from "./Components/Info/InfoDetail";
-import "./App.css";
+import PriceCalculator from "./Components/PriceCalc/PriceCalculator";
 import PaymentGateway from "./Components/Payment gateway/PaymentGateway";
 import SampleTicket from "./Components/SampleTicket/SampleTicket";
 import { v4 as uuid } from "uuid";
 import { db } from "./Backend/firbase_config";
 import { collection, addDoc } from "firebase/firestore";
 import Fetchdata from "./Components/Fetchticketdata/Fetchdata";
+
+import "./App.css";
 
 const priceCalculetor = (city1, city2) => {
   let price;

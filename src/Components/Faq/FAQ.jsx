@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import FaqData from 'react-faq-component';
 import "./Faq.css";
 
@@ -10,7 +10,7 @@ function FAQ() {
    {
     title: 'Is the service disable friendly?',
     content:
-      `Himalayan Travels is committed to making travel widely accessible, regardless of ability or disability. Please contact our customer service number or customer services point at bus stations`,
+      `Himalayan Travels is committed to making travel widely accessible, regardless of ability or disability. Please contact our customer service number or customer services point at bus stations.`,
           
   
     
@@ -27,7 +27,7 @@ function FAQ() {
     content:
       `Lost and found items left on the vehicle or at the station are forwaded to the Lost and Found Center. 
 
-      You can ask the operator directly about lost items on replacement buses. You can find out the operator by contacting our customer service on 012 345 6789 (€2/answered call + date/mpm) .`,
+      You can ask the operator directly about lost items on replacement buses. You can find out the operator by contacting our customer service on 012 345 6789 (€2/answered call + date/mpm).`,
           
   
     
@@ -36,7 +36,7 @@ function FAQ() {
   };
   
 return (
-  <div>
+  <div className='faq'>
     <h2 className="section-title">Frequently Asked Questions</h2>
     <div className="faq-wrapper">
       <FaqData data={data1} styles={{
