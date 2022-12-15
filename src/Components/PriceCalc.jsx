@@ -39,7 +39,9 @@ function PriceCalc({
 
           <tr>
             <td className="border text-left p-3">Kids/Students</td>
-            <td className="border text-center p-3">{price * 1}€</td>
+            <td className="border text-center p-3">
+              {(price * 0.45).toFixed(2)}€
+            </td>
             <td className="border text-center p-3">{Number(kids)}</td>
             <td className="border text-center p-3">
               {(kids * price * 0.45).toFixed(2)}€
@@ -48,7 +50,9 @@ function PriceCalc({
 
           <tr>
             <td className="border text-left p-3">Elders/Veterans</td>
-            <td className="border text-center p-3">{price * 1}€</td>
+            <td className="border text-center p-3">
+              {(price * 0.45).toFixed(2)}€
+            </td>
             <td className="border text-center p-3">{Number(elders)}</td>
             <td className="border text-center p-3">
               {(elders * price * 0.45).toFixed(2)}€
