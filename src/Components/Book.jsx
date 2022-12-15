@@ -36,6 +36,7 @@ function Book() {
   const [showPriceCalc, setShowPriceCalc] = useState(false);
   const [showFinalMessage, setShowFinalMesssage] = useState(false);
   const [showTicket, setShowTicket] = useState(false);
+  const [loading, setTicketLoading] = useState(true);
 
   const departureTimes = ["8:00", "10:00", "12:00", "14:00"];
 
@@ -117,6 +118,7 @@ function Book() {
     setShowFinalMesssage(false);
     setShowInfo(false);
     setShowPriceCalc(false);
+    setTicketLoading(false);
     setShowTicket(true);
   };
 

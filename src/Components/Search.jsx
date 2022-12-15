@@ -14,10 +14,10 @@ function Search() {
   const colRef = collection(db, "ticketinfo");
 
   useEffect(() => {
-    const getTicket = async () => {
+    async function getTicket() {
       const data = await getDocs(colRef);
       setTickets(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
+    }
     getTicket();
   }, []);
 

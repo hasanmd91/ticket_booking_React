@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 function Header({ searchTicket }) {
   return (
-    <header className="px-6 py-4 bg-sky-600 w-screen flex justify-between items-center">
+    <header className="relative px-6 py-4 bg-sky-600 w-screen flex justify-between items-center z-999">
       <div className="logo">
         <h1 className="text-3xl text-white font-bold">
           <Link to="/">Travel Ticket Booking</Link>
