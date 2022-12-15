@@ -24,7 +24,7 @@ function FAQ() {
   };
 
   return (
-    <div className="faq max-w-[620px] mx-auto my-[50px]">
+    <div className="faq max-w-[620px] mx-auto my-[50px] mt-auto">
       <h2 className="section-title">Frequently Asked Questions</h2>
       <div className="faq-wrapper">
         <FaqData

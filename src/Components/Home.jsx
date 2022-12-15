@@ -5,7 +5,7 @@ import Faq from "./Faq";
 
 function Home() {
   return (
-    <div>
+    <div className="flex flex-col">
       <Hero />
       <Features />
       <Faq />

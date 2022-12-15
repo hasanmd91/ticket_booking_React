@@ -59,7 +59,7 @@ function Search() {
         </form>
       </div>
 
-      <div className="w-[620px] mx-auto p-4">
+      <div className="w-[620px] mx-auto">
         {query &&
           singleTicket.map((ticket) => {
             return (
