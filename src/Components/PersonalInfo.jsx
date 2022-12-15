@@ -91,6 +91,9 @@ function PersonalInfo({ infoHandler, showPriceCalcHandler }) {
           Book
         </button>
       </form>
+      <p className="text-[12px]">
+        * This is a project website. Please don't put sensitive information.
+      </p>
     </div>
   );
 }

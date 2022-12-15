@@ -6,19 +6,19 @@ function FAQ() {
     title: "",
     rows: [
       {
-        title: "Is the service disable friendly?",
-        content: `Himalayan Travels is committed to making travel widely accessible, regardless of ability or disability. Please contact our customer service number or customer services point at bus stations.`,
+        title: "Is the service disable-friendly?",
+        content: `Each and every customer is equally important to us and we're committed to make our travel accessible for everybody. Our vehicle operators are always ready to help if in need.`,
       },
       {
         title: "My travel is delayed. Am I entitled to compensation?",
         content:
-          "You are eligible to get compensation if your long-distance journey was delayed at least by 60 minutes. We will also compensate any other extra costs due to the travel delay for ex. substitute travel option.",
+          "You are eligible to get compensation if your journey was delayed at least by 60 minutes. We will also compensate any other extra costs caused by travel delay for ex. substitute travel option.",
       },
 
       {
         title: "I have forgotten my items inside the bus. What should I do?",
         content:
-          "In this case, you should inform our 24/7 customer service number 030 1234 XXXX rightaway. Also inform your travel route. The items will be transferred to our Lost and Found Center. You can call them at 020 4567 XXXX and proceed to receive it back.",
+          "In this case, you should inform our 24/7 customer service number 030 1234 XXXX rightaway. Also inform your ticket number. The items will be transferred to our Lost and Found Center. You can call them at 020 4567 XXXX (Mon - Sat, 9:00 - 16:00) and proceed to receive it back.",
       },
     ],
   };

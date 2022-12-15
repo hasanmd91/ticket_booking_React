@@ -60,8 +60,7 @@ function Book() {
 
   const ticketNumHandler = (length) => {
     let ticket = "";
-    let chars =
-      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let chars = "ABCDEFGHI-JKLMNOPQRS-TUVWXYZ-0123456789";
     for (let i = 0; i < length; i++) {
       ticket += chars.charAt(Math.floor(Math.random() * chars.length));
     }
@@ -228,7 +227,10 @@ function Book() {
       )}
       {showPriceCalc && <PriceCalc {...data} paymentHandler={paymentHandler} />}
       {showFinalMessage && (
-        <FinalMessage {...data} ticketHandler={ticketHandler} />
+        <FinalMessage
+          {...data}
+          ticketHandler={() => setTimeout(ticketHandler, 4000)}
+        />
       )}
       {showTicket && <Ticket {...data} />}
     </div>
