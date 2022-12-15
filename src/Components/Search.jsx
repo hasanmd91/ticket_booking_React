@@ -30,9 +30,12 @@ function Search() {
     const oneTicket = tickets.filter(
       (ticket) => ticket.ticketNumber === search
     );
-    setSingleTicket(oneTicket);
-    setQuery(true);
-    e.target.reset();
+    if (oneTicket.length === 0) {
+      alert("No ticket found for given number. Please try again.");
+    } else {
+      setSingleTicket(oneTicket);
+      setQuery(true);
+    }
   };
 
   return (
@@ -59,7 +62,7 @@ function Search() {
         </form>
       </div>
 
-      <div className="w-[620px] mx-auto">
+      <div className="w-[620px] mx-auto p-4">
         {query &&
           singleTicket.map((ticket) => {
             return (
