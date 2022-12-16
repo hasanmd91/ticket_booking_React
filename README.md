@@ -13,3 +13,11 @@ This website uses:
 3. Firebase DB
 
 \*Ps. This project is a classroom project only. Don't input your sensitive data.
+
+## Setup and usage
+
+Live page [here](https://travelticketbookingsysteam.netlify.app/)
+
+## Sources
+
+- [source code](https://github.com/hasanmd91/ticket_booking_React)
